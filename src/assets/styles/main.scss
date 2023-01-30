@@ -1,0 +1,28 @@
+//---- Base
+@import "./__reset", "./__variables", "./__fonts";
+
+html, body {
+  height: 100%;
+  font-family: var(--main-font);
+}
+
+html {
+  scroll-behavior: smooth;
+  scrollbar-gutter: stable;
+  font-size: 62.5%;
+}
+
+.inner {
+  width: 100%;
+  max-width: 120rem;
+  margin-left: auto;
+  margin-right: auto;
+  @media (max-width: 1599px) and (min-width: 375px) {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+  @media (max-width: 374px) {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
