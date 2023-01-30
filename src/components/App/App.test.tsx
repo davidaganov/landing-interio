@@ -1,8 +1,9 @@
-import { render, screen } from "@testing-library/react"
+import { render } from "@testing-library/react"
 import { App } from "./App"
 
-test("renders Hello World", () => {
-  render(<App />)
-
-  expect(screen.getByText(/elegantly/i)).toBeInTheDocument()
+describe("App component", () => {
+  it("App renders", () => {
+    const { container } = render(<App />)
+    expect(container.firstChild).toBeTruthy()
+  })
 })

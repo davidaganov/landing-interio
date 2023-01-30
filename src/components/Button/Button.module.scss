@@ -1,0 +1,122 @@
+// Variables
+$transition: .2s ease-in-out;
+$translateY: .5rem;
+
+// Main
+
+.btn {
+  display: inline-block;
+  text-align: center;
+  transition: all $transition;
+}
+
+// Type
+
+.primary {
+  background-color: currentColor;
+  border: .2rem solid currentColor;
+  &:hover {
+    transform: translateY(-$translateY);
+  }
+}
+
+.ghost {
+  position: relative;
+  border: .2rem solid currentColor;
+  &::before, &::after {
+    position: absolute;
+    content: "";
+    width: 0;
+    height: 100%;
+    top: 0;
+    background-color: currentColor;
+    transition: all $transition;
+  }
+  &::before {
+    left: 0;
+  }
+  &::after {
+    right: 0;
+  }
+  .content {
+    position: relative;
+    z-index: 1;
+  }
+  &:hover {
+    &::before, &::after {
+      width: 50%;
+    }
+  }
+}
+
+// Size
+
+.big {
+  width: 100%;
+  padding: 35px;
+}
+
+.small {
+  padding: 16px 40px;
+}
+
+// Color
+
+.purple {
+  color: var(--color-purple);
+  &:not(.ghost) {
+    .content {
+      color: var(--color-white);
+    }
+    &:hover {
+      box-shadow: $translateY $translateY 0 var(--color-white);
+    }
+  }
+  &:not(.primary):hover {
+    .content {
+      color: var(--color-white);
+    }
+  }
+}
+
+.black {
+  color: var(--color-black);
+  &:not(.ghost) {
+    .content {
+      color: var(--color-white);
+    }
+    &:hover {
+      box-shadow: $translateY $translateY 0 var(--color-white);
+    }
+  }
+  &:not(.primary):hover {
+    .content {
+      color: var(--color-white);
+    }
+  }
+}
+
+.white {
+  color: var(--color-white);
+  &:not(.ghost) {
+    .content {
+      color: var(--color-black);
+    }
+    &:hover {
+      box-shadow: $translateY $translateY 0 var(--color-black);
+    }
+  }
+  &:not(.primary):hover {
+    .content {
+      color: var(--color-black);
+    }
+  }
+}
+
+// Content
+
+.content {
+  font: 700 2rem/2.6rem var(--second-font);
+  text-transform: uppercase;
+  transition: all $transition;
+}
