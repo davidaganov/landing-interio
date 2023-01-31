@@ -1,0 +1,153 @@
+.navbar {
+  position: absolute;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  left: 0;
+  @media (min-width: 1461px) {
+    padding: 3.5rem 0;
+  }
+  @media (max-width: 1460px) and (min-width: 375px) {
+    padding: 3.5rem 2rem;
+  }
+  @media (min-width: 1021px) {
+    align-items: center;
+  }
+  @media (max-width: 1020px) {
+    height: 100%;
+    overflow: hidden;
+  }
+  @media (max-width: 374px) {
+    padding: 2rem 1rem;
+  }
+}
+
+.menu {
+  @media (max-width: 1020px) {
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    padding: 2rem;
+    top: 0;
+    right: -100%;
+    background-color: var(--color-black-dark);
+    transition: right .2s ease-in-out;
+    z-index: 1;
+    &.opened {
+      right: 0;
+    }
+  }
+}
+
+.list {
+  display: flex;
+  @media (min-width: 1021px) {
+    gap: 4.5rem;
+  }
+  @media (max-width: 1020px) {
+    flex-direction: column;
+    gap: 1.5rem;
+    height: 100%;
+  }
+}
+
+.link {
+  display: block;
+  position: relative;
+  @media (min-width: 1021px) {
+    padding: .3rem;
+    transition: color .2s;
+    &::before {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 0;
+      bottom: 0;
+      left: 0;
+      background-color: var(--color-black);
+      transition: height .1s ease-in-out;
+    }
+    .content {
+      position: relative;
+      font: 500 1.8rem/2.2rem var(--main-font);
+      color: var(--color-black);
+      transition: color .2s ease-in-out;
+    }
+    &:hover, &:focus-visible {
+      .content {
+        color: var(--color-white);
+      }
+      &::before {
+        height: 100%;
+      }
+    }
+  }
+  @media (max-width: 1020px) {
+    text-align: right;
+    .content {
+      font: 700 4rem var(--main-font);
+      color: var(--color-accent);
+    }
+  }
+}
+
+.controls {
+  display: flex;
+  @media (max-width: 1020px) {
+    margin-top: -1.5rem;
+  }
+}
+
+.icon {
+  position: relative;
+  height: 6rem;
+  padding: 0 2rem;
+  cursor: pointer;
+  transition: color .2s ease-in-out;
+  @media (min-width: 769px) {
+    &::before {
+      content: "";
+      position: absolute;
+      width: 0;
+      height: 0;
+      margin: auto;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background-color: var(--color-black);
+      transition: all .1s ease-in-out;
+    }
+    svg {
+      position: relative;
+    }
+    &:hover, &:focus-visible {
+      color: var(--color-white);
+      &::before {
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+}
+
+.cart {
+  @media (max-width: 768px) {
+    display: none;
+  }
+}
+
+.close {
+  @media (min-width: 1021px) {
+    display: none;
+  }
+  @media (max-width: 1020px) {
+    position: absolute;
+    width: 5rem;
+    height: 5rem;
+    top: 2rem;
+    left: 2rem;
+    color: var(--color-white);
+    z-index: 2;
+  }
+}

@@ -15,7 +15,7 @@ $translateY: .5rem;
 .primary {
   background-color: currentColor;
   border: .2rem solid currentColor;
-  &:hover {
+  &:hover, &:focus-visible {
     transform: translateY(-$translateY);
   }
 }
@@ -42,7 +42,7 @@ $translateY: .5rem;
     position: relative;
     z-index: 1;
   }
-  &:hover {
+  &:hover, &:focus-visible {
     &::before, &::after {
       width: 50%;
     }
@@ -53,7 +53,12 @@ $translateY: .5rem;
 
 .big {
   width: 100%;
-  padding: 35px;
+  @media (min-width: 769px) {
+    padding: 35px;
+  }
+  @media (max-width: 768px) {
+    padding: 25px;
+  }
 }
 
 .small {
@@ -68,13 +73,15 @@ $translateY: .5rem;
     .content {
       color: var(--color-white);
     }
-    &:hover {
+    &:hover, &:focus-visible {
       box-shadow: $translateY $translateY 0 var(--color-white);
     }
   }
-  &:not(.primary):hover {
-    .content {
-      color: var(--color-white);
+  &:not(.primary) {
+    &:hover, &:focus-visible {
+      .content {
+        color: var(--color-white);
+      }
     }
   }
 }
@@ -85,13 +92,15 @@ $translateY: .5rem;
     .content {
       color: var(--color-white);
     }
-    &:hover {
+    &:hover, &:focus-visible {
       box-shadow: $translateY $translateY 0 var(--color-white);
     }
   }
-  &:not(.primary):hover {
-    .content {
-      color: var(--color-white);
+  &:not(.primary) {
+    &:hover, &:focus-visible {
+      .content {
+        color: var(--color-white);
+      }
     }
   }
 }
@@ -102,13 +111,15 @@ $translateY: .5rem;
     .content {
       color: var(--color-black);
     }
-    &:hover {
+    &:hover, &:focus-visible {
       box-shadow: $translateY $translateY 0 var(--color-black);
     }
   }
-  &:not(.primary):hover {
-    .content {
-      color: var(--color-black);
+  &:not(.primary) {
+    &:hover, &:focus-visible {
+      .content {
+        color: var(--color-black);
+      }
     }
   }
 }

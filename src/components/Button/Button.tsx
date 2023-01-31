@@ -6,11 +6,12 @@ export const Button = ({
   apperance = "primary",
   color = "black",
   scale = "small",
-  children
+  children,
+  ...props
 }: ButtonProps): JSX.Element => {
   return (
     <a
-      href="#"
+      {...props}
       className={cn(styles.btn, {
         [styles.primary]: apperance === "primary",
         [styles.ghost]: apperance === "ghost",

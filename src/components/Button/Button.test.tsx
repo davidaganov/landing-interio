@@ -4,6 +4,7 @@ import { Button } from "./Button"
 test("Button render", () => {
   render(
     <Button
+      href="#test"
       apperance="primary"
       color="white"
     >
