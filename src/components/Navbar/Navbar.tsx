@@ -10,7 +10,7 @@ import { ReactComponent as BurgerIcon } from "./icons/burger.svg"
 import { ReactComponent as CartIcon } from "./icons/cart.svg"
 import { ReactComponent as CloseIcon } from "./icons/close.svg"
 
-export const Navbar = ({ list, ...props }: NavbarProps): JSX.Element => {
+export const Navbar = ({ list, ...props }: NavbarProps) => {
   const [opened, setOpened] = useState<boolean>(false)
 
   useEffect(() => {

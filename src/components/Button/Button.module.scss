@@ -15,36 +15,40 @@ $translateY: .5rem;
 .primary {
   background-color: currentColor;
   border: .2rem solid currentColor;
-  &:hover, &:focus-visible {
-    transform: translateY(-$translateY);
+  @media (min-width: 769px) {
+    &:hover, &:focus-visible {
+      transform: translateY(-$translateY);
+    }
   }
 }
 
 .ghost {
   position: relative;
   border: .2rem solid currentColor;
-  &::before, &::after {
-    position: absolute;
-    content: "";
-    width: 0;
-    height: 100%;
-    top: 0;
-    background-color: currentColor;
-    transition: all $transition;
-  }
-  &::before {
-    left: 0;
-  }
-  &::after {
-    right: 0;
-  }
-  .content {
-    position: relative;
-    z-index: 1;
-  }
-  &:hover, &:focus-visible {
+  @media (min-width: 769px) {
     &::before, &::after {
-      width: 50%;
+      position: absolute;
+      content: "";
+      width: 0;
+      height: 100%;
+      top: 0;
+      background-color: currentColor;
+      transition: all $transition;
+    }
+    &::before {
+      left: 0;
+    }
+    &::after {
+      right: 0;
+    }
+    .content {
+      position: relative;
+      z-index: 1;
+    }
+    &:hover, &:focus-visible {
+      &::before, &::after {
+        width: 50%;
+      }
     }
   }
 }
@@ -57,7 +61,7 @@ $translateY: .5rem;
     padding: 35px;
   }
   @media (max-width: 768px) {
-    padding: 25px;
+    padding: 20px;
   }
 }
 
@@ -73,14 +77,18 @@ $translateY: .5rem;
     .content {
       color: var(--color-white);
     }
-    &:hover, &:focus-visible {
-      box-shadow: $translateY $translateY 0 var(--color-white);
+    @media (min-width: 769px) {
+      &:hover, &:focus-visible {
+        box-shadow: $translateY $translateY 0 var(--color-white);
+      }
     }
   }
   &:not(.primary) {
-    &:hover, &:focus-visible {
-      .content {
-        color: var(--color-white);
+    @media (min-width: 769px) {
+      &:hover, &:focus-visible {
+        .content {
+          color: var(--color-white);
+        }
       }
     }
   }
@@ -92,14 +100,18 @@ $translateY: .5rem;
     .content {
       color: var(--color-white);
     }
-    &:hover, &:focus-visible {
-      box-shadow: $translateY $translateY 0 var(--color-white);
+    @media (min-width: 769px) {
+      &:hover, &:focus-visible {
+        box-shadow: $translateY $translateY 0 var(--color-white);
+      }
     }
   }
   &:not(.primary) {
-    &:hover, &:focus-visible {
-      .content {
-        color: var(--color-white);
+    @media (min-width: 769px) {
+      &:hover, &:focus-visible {
+        .content {
+          color: var(--color-white);
+        }
       }
     }
   }
@@ -111,14 +123,18 @@ $translateY: .5rem;
     .content {
       color: var(--color-black);
     }
-    &:hover, &:focus-visible {
-      box-shadow: $translateY $translateY 0 var(--color-black);
+    @media (min-width: 769px) {
+      &:hover, &:focus-visible {
+        box-shadow: $translateY $translateY 0 var(--color-black);
+      }
     }
   }
   &:not(.primary) {
+    @media (min-width: 769px) {
     &:hover, &:focus-visible {
-      .content {
-        color: var(--color-black);
+        .content {
+          color: var(--color-black);
+        }
       }
     }
   }

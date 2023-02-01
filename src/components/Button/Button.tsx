@@ -7,12 +7,12 @@ export const Button = ({
   color = "black",
   scale = "small",
   children,
+  className,
   ...props
-}: ButtonProps): JSX.Element => {
+}: ButtonProps) => {
   return (
     <a
-      {...props}
-      className={cn(styles.btn, {
+      className={cn(styles.btn, className, {
         [styles.primary]: apperance === "primary",
         [styles.ghost]: apperance === "ghost",
         [styles.big]: scale === "big",
@@ -21,6 +21,7 @@ export const Button = ({
         [styles.white]: color === "white",
         [styles.black]: color === "black"
       })}
+      {...props}
     >
       <span className={styles.content}>{children}</span>
     </a>

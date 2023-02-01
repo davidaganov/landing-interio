@@ -3,6 +3,7 @@
   min-height: 80rem;
   max-height: 120rem;
   background-color: var(--color-accent);
+  overflow: hidden;
 }
 
 .inner {
@@ -64,5 +65,3 @@
     flex-direction: column;
   }
 }
-
-.btn {}
