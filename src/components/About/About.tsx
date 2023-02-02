@@ -9,7 +9,8 @@ const cardsData = [
   {
     id: 1,
     number: 1,
-    details: "Lorem, ipsum dolor sit amet consectetur adipisicing elit.",
+    details:
+      "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Lorem, ipsum dolor sit amet consectetur adipisicing elit.",
     title: "Custom furniture",
     description: "Lorem, ipsum dolor sit amet consectetur adipisicing elit."
   },
@@ -18,7 +19,8 @@ const cardsData = [
     number: 2,
     details: "Lorem, ipsum dolor sit amet consectetur adipisicing elit.",
     title: "Furniture layouts",
-    description: "Lorem, ipsum dolor sit amet consectetur adipisicing elit."
+    description:
+      "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Lorem, ipsum dolor sit amet consectetur adipisicing elit. "
   },
   {
     id: 3,
@@ -73,7 +75,7 @@ export const About = () => {
               href="#"
               className={styles.more}
             >
-              Learn more
+              <span className={styles.moreText}>Learn more</span>
               <span className={styles.moreIcon}>
                 <ArrowIcon />
               </span>
