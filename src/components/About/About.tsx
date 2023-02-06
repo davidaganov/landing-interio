@@ -1,9 +1,8 @@
-import { Button } from "../"
+import { Button, Card, LinkMore } from "../"
 import styles from "./About.module.scss"
 
 import { ReactComponent as DecorationGrid } from "./images/grid.svg"
 import { ReactComponent as DecorationStar } from "./images/star.svg"
-import { ReactComponent as ArrowIcon } from "./icons/arrow.svg"
 
 const cardsData = [
   {
@@ -32,19 +31,12 @@ const cardsData = [
 ]
 
 const renderCards = () => {
-  return cardsData.map(({ id, number, details, title, description }) => {
+  return cardsData.map((item) => {
     return (
-      <div
-        className={styles.card}
-        key={id}
-      >
-        <p className={styles.cardDetails}>{details}</p>
-        <div className={styles.cardBody}>
-          <span className={styles.cardNumber}>0{number}</span>
-          <h3 className={styles.cardTitle}>{title}</h3>
-          <p className={styles.cardDescription}>{description}</p>
-        </div>
-      </div>
+      <Card
+        key={item.id}
+        data={item}
+      />
     )
   })
 }
@@ -71,15 +63,7 @@ export const About = () => {
         <div className={styles.middle}>
           <div className={styles.heading}>
             <h2 className={styles.title}>We do it best</h2>
-            <a
-              href="#"
-              className={styles.more}
-            >
-              <span className={styles.moreText}>Learn more</span>
-              <span className={styles.moreIcon}>
-                <ArrowIcon />
-              </span>
-            </a>
+            <LinkMore href="#">Learn more</LinkMore>
           </div>
 
           <div className={styles.slider}>{cards}</div>

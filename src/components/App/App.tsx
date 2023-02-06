@@ -1,4 +1,4 @@
-import { Header, About } from "../"
+import { Header, About, Projects } from "../"
 
 export const App = () => {
   return (
@@ -6,6 +6,7 @@ export const App = () => {
       <Header />
       <main>
         <About />
+        <Projects />
       </main>
     </div>
   )

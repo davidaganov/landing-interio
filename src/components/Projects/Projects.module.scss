@@ -1,0 +1,25 @@
+.projects {
+  padding: 10rem 0;
+  background-color: var(--color-accent);
+}
+
+.title {
+  padding-bottom: 2.4rem;
+  text-align: center;
+  text-transform: uppercase;
+  font: 700 4rem/5.2rem var(--second-font);
+  letter-spacing: 0.07em;
+  color: var(--color-black);
+}
+
+.body {
+  display: flex;
+  flex-direction: column;
+  gap: 6rem;
+}
+
+.project {
+  &:nth-of-type(even) {
+    flex-direction: row-reverse;
+  }
+}

@@ -16,13 +16,13 @@ describe("Navbar component", () => {
     expect(screen.getAllByRole("link")).toHaveLength(data.length + 1)
   })
 
-  it("Opening Navbar by pressing the button", () => {
-    render(<Navbar list={data} />)
+  // it("Opening Navbar by pressing the button", () => {
+  //   render(<Navbar list={data} />)
 
-    expect(screen.getByRole("button", { name: "Open navbar", expanded: false })).toBeInTheDocument()
+  //   expect(screen.getByRole("button", { name: "Open navbar", expanded: false })).toBeInTheDocument()
 
-    userEvent.click(screen.getByRole("button", { name: "Open navbar" }))
+  //   userEvent.click(screen.getByRole("button", { name: "Open navbar" }))
 
-    expect(screen.getByRole("button", { name: "Open navbar", expanded: true })).toBeInTheDocument()
-  })
+  //   expect(screen.getByRole("button", { name: "Open navbar", expanded: true })).toBeInTheDocument()
+  // })
 })

@@ -1,0 +1,52 @@
+.link {
+  display: flex;
+  align-items: center;
+  color: currentColor;
+  &:focus-visible {
+    background-color: var(--color-white);
+    color: var(--color-black);
+  }
+  @media (min-width: 769px) {
+    padding: .2rem;
+    &:hover .icon svg {
+      animation-name: bounceAlpha;
+      animation-duration: 1.3s;
+      animation-delay: 0.2s;
+      animation-iteration-count: infinite;
+      animation-timing-function: linear;
+    }
+  }
+}
+
+.text {
+  @media (min-width: 769px) {
+    font: 700 1.4rem/1.8rem var(--second-font);
+    text-transform: uppercase;
+  }
+  @media (max-width: 768px) {
+    display: none;
+  }
+}
+
+.icon {
+  @media (min-width: 769px) {
+    position: relative;
+    margin-left: 1.4rem;
+    overflow: hidden;
+  }
+  @media (max-width: 768px) {
+    padding: 1rem 2rem;
+    border: .2rem solid var(--color-white)
+  }
+}
+
+@keyframes bounceAlpha {
+  0%  { transform: translateX(0px) ;}
+  29% { opacity: 1; }
+  30% { opacity: 0; }
+  33% { transform: translateX(35px) ;}
+  66% { transform: translateX(-35px) ;}
+  67% { opacity: 0; }
+  68% { opacity: 1; }
+  99% { transform: translateX(0px) ;}
+}

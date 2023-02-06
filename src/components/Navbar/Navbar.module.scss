@@ -18,7 +18,7 @@
 
 .menu {
   @media (max-width: 1020px) {
-    position: absolute;
+    position: fixed;
     width: 100%;
     height: 100vh;
     padding: 2rem;
@@ -61,12 +61,6 @@
       background-color: var(--color-black);
       transition: height .1s ease-in-out;
     }
-    .content {
-      position: relative;
-      font: 500 1.8rem/2.2rem var(--main-font);
-      color: var(--color-black);
-      transition: color .2s ease-in-out;
-    }
     &:hover, &:focus-visible {
       .content {
         color: var(--color-white);
@@ -78,10 +72,25 @@
   }
   @media (max-width: 1020px) {
     text-align: right;
-    .content {
-      font: 700 4rem var(--main-font);
-      color: var(--color-accent);
+    &:focus-visible {
+      .content {
+        background-color: var(--color-white);
+        color: var(--color-black);
+      }
     }
+  }
+}
+
+.content {
+  @media (min-width: 1021px) {
+    position: relative;
+    font: 500 1.8rem/2.2rem var(--main-font);
+    color: var(--color-black);
+    transition: color .2s ease-in-out;
+  }
+  @media (max-width: 1020px) {
+    font: 700 4rem var(--main-font);
+    color: var(--color-accent);
   }
 }
 
@@ -94,8 +103,12 @@
   height: 6rem;
   padding: 0 2rem;
   cursor: pointer;
-  transition: color .2s ease-in-out;
-  @media (min-width: 769px) {
+  &:focus-visible {
+    background-color: var(--color-black);
+    color: var(--color-white);
+  }
+  @media (min-width: 1021px) {
+    transition: color .2s ease-in-out;
     &::before {
       content: "";
       position: absolute;
@@ -112,7 +125,7 @@
     svg {
       position: relative;
     }
-    &:hover, &:focus-visible {
+    &:hover {
       color: var(--color-white);
       &::before {
         width: 100%;
@@ -135,6 +148,7 @@
 }
 
 .close {
+  cursor: pointer;
   @media (min-width: 1021px) {
     display: none;
   }
@@ -146,5 +160,9 @@
     left: 2rem;
     color: var(--color-white);
     z-index: 2;
+    &:focus-visible {
+      background-color: var(--color-white);
+      color: var(--color-black);
+    }
   }
 }

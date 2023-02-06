@@ -1,7 +1,11 @@
+export * from "./Button/Button"
+export * from "./Logo/Logo"
+export * from "./Card/Card"
+export * from "./LinkMore/LinkMore"
+export * from "./Project/Project"
+
 export * from "./App/App"
 export * from "./Header/Header"
 export * from "./Navbar/Navbar"
 export * from "./About/About"
-
-export * from "./Button/Button"
-export * from "./Logo/Logo"
+export * from "./Projects/Projects"
