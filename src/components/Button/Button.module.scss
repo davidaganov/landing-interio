@@ -20,6 +20,15 @@ $translateY: .5rem;
       transform: translateY(-$translateY);
     }
   }
+  @media (max-width: 768px) {
+    &:focus-visible {
+      border-color: var(--color-black);
+      background-color: var(--color-black);
+      .content {
+        color: var(--color-white) !important;
+      }
+    }
+  }
 }
 
 .ghost {
@@ -114,6 +123,14 @@ $translateY: .5rem;
         }
       }
     }
+    @media (max-width: 768px) {
+      &:focus-visible {
+        background-color: var(--color-black);
+        .content {
+          color: var(--color-white);
+        }
+      }
+    }
   }
 }
 
@@ -132,6 +149,14 @@ $translateY: .5rem;
   &:not(.primary) {
     @media (min-width: 769px) {
     &:hover, &:focus-visible {
+        .content {
+          color: var(--color-black);
+        }
+      }
+    }
+    @media (max-width: 768px) {
+      &:focus-visible {
+        background-color: var(--color-white);
         .content {
           color: var(--color-black);
         }

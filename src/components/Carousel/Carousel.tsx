@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react"
+import { useState, useEffect, useRef } from "react"
 import styles from "./Carousel.module.scss"
 import cn from "classnames"
 
@@ -8,17 +8,28 @@ export const Carousel = ({ children }: any) => {
   const [currentIndex, setCurrentIndex] = useState<number>(0)
   const [length, setLength] = useState<number>(children.length)
 
+  const prevBtn = useRef<HTMLButtonElement | null>(null)
+  const nextBtn = useRef<HTMLButtonElement | null>(null)
+
   useEffect(() => {
     setLength(children.length)
   }, [children])
 
   const handleNextClick = () => {
+    if (currentIndex >= length - 2) {
+      prevBtn.current && prevBtn.current.focus()
+    }
+
     if (currentIndex < length - 1) {
       setCurrentIndex((prevState) => prevState + 1)
     }
   }
 
   const handlePrevClick = () => {
+    if (currentIndex <= 1) {
+      nextBtn.current && nextBtn.current.focus()
+    }
+
     if (currentIndex > 0) {
       setCurrentIndex((prevState) => prevState - 1)
     }
@@ -45,6 +56,8 @@ export const Carousel = ({ children }: any) => {
           })}
           onClick={() => handlePrevClick()}
           tabIndex={currentIndex <= 0 ? -1 : 0}
+          ref={prevBtn}
+          aria-label="Select the previous slide"
         >
           <ArrowIcon />
         </button>
@@ -54,6 +67,8 @@ export const Carousel = ({ children }: any) => {
           })}
           onClick={() => handleNextClick()}
           tabIndex={currentIndex >= length - 1 ? -1 : 0}
+          ref={nextBtn}
+          aria-label="Select the next slide"
         >
           <ArrowIcon />
         </button>

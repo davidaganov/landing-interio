@@ -12,6 +12,7 @@ import { ReactComponent as CloseIcon } from "./icons/close.svg"
 
 export const Navbar = ({ list, ...props }: NavbarProps) => {
   const [opened, setOpened] = useState<boolean>(false)
+  const [desktop, setDesktop] = useState<boolean>(false)
   const closeRef = useRef<HTMLButtonElement | null>(null)
 
   useEffect(() => {
@@ -20,10 +21,10 @@ export const Navbar = ({ list, ...props }: NavbarProps) => {
 
   useEffect(() => {
     const handleResize = () => {
-      if (window.innerWidth > 1021) {
-        setOpened(true)
+      if (window.innerWidth > 1020) {
+        setDesktop(true)
       } else {
-        setOpened(false)
+        setDesktop(false)
       }
     }
     handleResize()
@@ -34,12 +35,12 @@ export const Navbar = ({ list, ...props }: NavbarProps) => {
   }, [])
 
   const openMenu = () => {
-    if (closeRef.current) closeRef.current.focus()
+    closeRef.current && closeRef.current.focus()
     setOpened(!opened)
   }
 
   const closeMenu = () => {
-    if (window.innerWidth < 1021) setOpened(false)
+    if (window.innerWidth < 1020) setOpened(false)
   }
 
   const buildLink = ({ title, link, last }: navLink) => {
@@ -47,7 +48,7 @@ export const Navbar = ({ list, ...props }: NavbarProps) => {
       <a
         href={link}
         className={styles.link}
-        tabIndex={opened ? 0 : -1}
+        tabIndex={opened || desktop ? 0 : -1}
         onBlur={() => (last ? closeMenu() : null)}
       >
         <span className={styles.content}>{title}</span>
