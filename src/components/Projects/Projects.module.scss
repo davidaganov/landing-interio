@@ -1,15 +1,25 @@
 .projects {
-  padding: 10rem 0;
   background-color: var(--color-accent);
+  @media (min-width: 769px) {
+    padding: 10rem 0;
+  }
+  @media (max-width: 768px) {
+    padding: 6rem 0;
+  }
 }
 
 .title {
   padding-bottom: 2.4rem;
   text-align: center;
   text-transform: uppercase;
-  font: 700 4rem/5.2rem var(--second-font);
   letter-spacing: 0.07em;
   color: var(--color-black);
+  @media (min-width: 576px) {
+    font: 700 4rem/5.2rem var(--second-font);
+  }
+  @media (max-width: 575px) {
+    font: 700 3rem/4.2rem var(--second-font);
+  }
 }
 
 .body {

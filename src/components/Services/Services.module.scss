@@ -1,4 +1,4 @@
-.about {
+.services {
   background-color: var(--color-black-dark);
   color: var(--color-white);
   @media (min-width: 1021px) {
@@ -14,11 +14,14 @@
 .title {
   letter-spacing: 0.07em;
   text-transform: uppercase;
-  @media (min-width: 769px) {
+  @media (min-width: 1021px) {
     font: 700 4rem/5.2rem var(--second-font);
   }
-  @media (max-width: 768px) {
+  @media (max-width: 1020px) and (min-width: 576px) {
     font: 700 2.5rem/3.7rem var(--second-font);
+  }
+  @media (max-width: 575px) {
+    font: 700 1.8rem/3rem var(--second-font);
   }
 }
 
@@ -149,14 +152,14 @@
       height: 14rem;
       left: -4.7rem;
       bottom: -4.7rem;
-      background-color: var(--color-accent);
+      background-color: var(--color-green);
     }
   }
   @media (max-width: 768px) {
     grid-row: 3 / 4;
     margin: 0 auto;
     img {
-      border: 1rem dashed var(--color-accent);
+      border: 1rem dashed var(--color-green);
     }
   }
   @media (max-width: 768px) and (min-width: 576px) {

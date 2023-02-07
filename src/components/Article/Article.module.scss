@@ -1,0 +1,55 @@
+.article {}
+
+.picture {
+  width: 100%;
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+  @media (min-width: 1021px) {
+    height: 39.6rem;
+  }
+  @media (max-width: 1020px) and (min-width: 576px) {
+    height: 25rem;
+  }
+}
+
+.title {
+  @media (min-width: 576px) {
+    margin-top: 3rem;
+  }
+  @media (max-width: 575px) {
+    margin-top: 1.5rem;
+  }
+}
+
+.titleLink {
+  text-transform: uppercase;
+  font: 700 1.8rem/186.6% var(--second-font);
+  letter-spacing: 0.07em;
+  color: currentColor;
+  &:focus-visible {
+    background-color: var(--color-white);
+    color: var(--color-black);
+  }
+  @media (min-width: 769px) {
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+.description {
+  max-width: 95%;
+  margin-top: 1.6rem;
+  font: 400 1.8rem/3.4rem var(--main-font);
+  color: var(--color-white);
+  opacity: .9;
+  word-wrap: anywhere;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}

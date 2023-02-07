@@ -1,12 +1,13 @@
-import { Header, About, Projects } from "../"
+import { Header, Services, Projects, Blog } from "../"
 
 export const App = () => {
   return (
     <div>
       <Header />
       <main>
-        <About />
+        <Services />
         <Projects />
+        <Blog />
       </main>
     </div>
   )

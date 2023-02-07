@@ -1,5 +1,5 @@
-import { Button, Card, LinkMore } from "../"
-import styles from "./About.module.scss"
+import { Button, Card, LinkMore } from ".."
+import styles from "./Services.module.scss"
 
 import { ReactComponent as DecorationGrid } from "./images/grid.svg"
 import { ReactComponent as DecorationStar } from "./images/star.svg"
@@ -43,11 +43,11 @@ const renderCards = () => {
 
 const cards = renderCards()
 
-export const About = () => {
+export const Services = () => {
   return (
     <section
-      className={styles.about}
-      id="about"
+      className={styles.services}
+      id="services"
     >
       <div className={(styles.inner, "inner")}>
         <div className={styles.top}>

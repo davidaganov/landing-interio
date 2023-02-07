@@ -37,13 +37,13 @@ export const Header = () => {
               Get in Touch
             </Button>
             <Button
-              href="#about"
+              href="#services"
               className={styles.btn}
               apperance="primary"
               color="white"
               scale="big"
             >
-              About Us
+              Services Us
             </Button>
           </div>
         </div>
