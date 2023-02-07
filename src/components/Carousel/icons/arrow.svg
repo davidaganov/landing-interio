@@ -1,0 +1,11 @@
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="56"
+  height="16"
+  fill="none"
+>
+  <path
+    fill="currentColor"
+    d="M55.7 8.7a1 1 0 0 0 0-1.4L49.35.92a1 1 0 1 0-1.41 1.41L53.59 8l-5.66 5.66a1 1 0 0 0 1.41 1.41l6.37-6.36ZM0 9h55V7H0v2Z"
+  />
+</svg>

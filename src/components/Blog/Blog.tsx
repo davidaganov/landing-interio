@@ -1,7 +1,37 @@
-import { Article, LinkMore } from "../"
+import { Article, LinkMore, Carousel } from "../"
 import styles from "./Blog.module.scss"
 
 import { ReactComponent as DecorationGrid } from "./images/grid.svg"
+
+const reviewsData = [
+  {
+    id: 1,
+    picture: require("./images/review-1.jpg"),
+    title: "interior design",
+    description:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut officia cum minima dolorem aperiam iste, incidunt omnis recusandae, vitae voluptatum a nostrum vel",
+    name: "Samantha William",
+    job: "Senior Designer"
+  },
+  {
+    id: 2,
+    picture: require("./images/review-1.jpg"),
+    title: "Help us improve our interior design",
+    description:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut officia cum minima dolorem aperiam iste.",
+    name: "Samantha William",
+    job: "Senior Designer"
+  },
+  {
+    id: 3,
+    picture: require("./images/review-1.jpg"),
+    title: "Help us improve",
+    description:
+      "Aut officia cum minima dolorem aperiam iste, incidunt omnis recusandae, vitae voluptatum a nostrum vel",
+    name: "Samantha William",
+    job: "Senior Designer"
+  }
+]
 
 const articlesData = [
   {
@@ -31,6 +61,32 @@ const renderArticles = () => {
   })
 }
 
+const renderSlides = () => {
+  return reviewsData.map((item) => {
+    return (
+      <div
+        className={styles.review}
+        key={item.id}
+      >
+        <div className={styles.reviewPicture}>
+          <img
+            src={item.picture}
+            alt=""
+            width="667"
+            height="472"
+          />
+        </div>
+        <div className={styles.reviewBody}>
+          <h4 className={styles.reviewTitle}>{item.title}</h4>
+          <p className={styles.reviewDescription}>{item.description}</p>
+          <p className={styles.reviewName}>{item.name}</p>
+          <p className={styles.reviewJob}>{item.job}</p>
+        </div>
+      </div>
+    )
+  })
+}
+
 const articles = renderArticles()
 
 export const Blog = () => {
@@ -43,26 +99,8 @@ export const Blog = () => {
         <h2 className={styles.title}>Our Happy Clients</h2>
 
         <div className={styles.clients}>
-          <DecorationGrid className={styles.grid} />
-          <div className={styles.slide}>
-            <div className={styles.picture}>
-              <img
-                src={require("./images/slider-1.jpg")}
-                alt=""
-                width="667"
-                height="472"
-              />
-            </div>
-            <div className={styles.review}>
-              <h4 className={styles.reviewTitle}>Help us improve our interior design</h4>
-              <p className={styles.reviewDescription}>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut officia cum minima
-                dolorem aperiam iste, incidunt omnis recusandae, vitae voluptatum a nostrum vel
-              </p>
-              <p className={styles.reviewName}>Samantha William</p>
-              <p className={styles.reviewJob}>Senior Designer</p>
-            </div>
-          </div>
+          <DecorationGrid className={styles.decoration} />
+          <Carousel>{renderSlides()}</Carousel>
         </div>
 
         <div className={styles.articles}>

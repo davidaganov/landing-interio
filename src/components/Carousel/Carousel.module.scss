@@ -1,0 +1,63 @@
+.carousel {
+  position: relative;
+}
+
+.carouselContainer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.carouselWrapper {
+  display: flex;
+  width: 100%;
+  position: relative;
+}
+
+.carouselContentWrapper {
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+}
+
+.carouselContent {
+  display: flex;
+  transition: all 1s ease-in-out;
+  scrollbar-width: none;
+}
+
+.carouselContent::-webkit-scrollbar, .carouselContent::-webkit-scrollbar {
+  display: none;
+}
+
+.carouselContent > * {
+  width: 100%;
+  flex-shrink: 0;
+  flex-grow: 1;
+}
+
+.control {
+  margin-top: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+}
+
+.arrow {
+  height: 2.6rem;
+  padding: .5rem;
+  color: var(--color-white);
+  cursor: pointer;
+  &:focus-visible {
+    background-color: var(--color-white);
+    color: var(--color-black);
+  }
+  &.disabled {
+    opacity: .25;
+  }
+}
+
+.leftArrow {
+  transform: rotate(180deg);
+}

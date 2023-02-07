@@ -66,7 +66,7 @@ export const Services = () => {
             <LinkMore href="#">Learn more</LinkMore>
           </div>
 
-          <div className={styles.slider}>{cards}</div>
+          <div className={styles.carousel}>{cards}</div>
         </div>
 
         <div className={styles.bottom}>

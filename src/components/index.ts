@@ -3,6 +3,7 @@ export * from "./Logo/Logo"
 export * from "./Card/Card"
 export * from "./LinkMore/LinkMore"
 export * from "./Project/Project"
+export * from "./Carousel/Carousel"
 export * from "./Article/Article"
 
 export * from "./App/App"
