@@ -4,6 +4,7 @@ import cn from "classnames"
 
 import { ReactComponent as ArrowIcon } from "./icons/arrow.svg"
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export const Carousel = ({ children }: any) => {
   const [currentIndex, setCurrentIndex] = useState<number>(0)
   const [length, setLength] = useState<number>(children.length)
@@ -57,7 +58,7 @@ export const Carousel = ({ children }: any) => {
           onClick={() => handlePrevClick()}
           tabIndex={currentIndex <= 0 ? -1 : 0}
           ref={prevBtn}
-          aria-label="Select the previous slide"
+          aria-label={`Select the ${currentIndex} slide`}
         >
           <ArrowIcon />
         </button>
@@ -68,7 +69,7 @@ export const Carousel = ({ children }: any) => {
           onClick={() => handleNextClick()}
           tabIndex={currentIndex >= length - 1 ? -1 : 0}
           ref={nextBtn}
-          aria-label="Select the next slide"
+          aria-label={`Select the ${currentIndex + 1} slide`}
         >
           <ArrowIcon />
         </button>

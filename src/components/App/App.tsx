@@ -1,4 +1,4 @@
-import { Header, Services, Projects, Blog } from "../"
+import { Header, Services, Projects, Blog, Footer } from "../"
 
 export const App = () => {
   return (
@@ -9,6 +9,7 @@ export const App = () => {
         <Projects />
         <Blog />
       </main>
+      <Footer />
     </div>
   )
 }

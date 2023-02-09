@@ -1,0 +1,13 @@
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  fill="none"
+>
+  <path
+    fill="currentColor"
+    fill-rule="evenodd"
+    d="M21.8 5.2c.4.3.6.7.7 1.2a29 29 0 0 1 0 10.6 2.8 2.8 0 0 1-1.9 2c-1.7.5-8.6.5-8.6.5s-6.9 0-8.6-.5a2.8 2.8 0 0 1-2-2 29 29 0 0 1 0-10.5 2.8 2.8 0 0 1 2-2C5.1 4 12 4 12 4s6.9 0 8.6.4c.5.2.9.4 1.2.8Zm-6.3 6.6L9.7 15V8.5l5.8 3.3Z"
+    clip-rule="evenodd"
+  />
+</svg>
